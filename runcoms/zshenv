@@ -9,3 +9,12 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+path=(
+  $HOME/.local/{,s}bin(N)
+  /var/lib/flatpak/exports/share(N)
+  $HOME/.local/share/flatpak/exports/share(N)
+  /home/brennan/.pyenv/bin(N)
+  $path
+)
+
