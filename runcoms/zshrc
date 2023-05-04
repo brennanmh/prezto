@@ -30,3 +30,5 @@ alias vim='nvim'
 alias vi='nvim'
 alias h='history'
 
+# pyenv
+eval "$(pyenv virtualenv-init -)"
