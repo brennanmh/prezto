@@ -43,13 +43,21 @@ fi
 typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
+cdpath=(
+  $cdpath
+  $HOME
+  $HOME/Dev
+  $HOME/Dev/TE
+  $HOME/Dev/TE/repos
+)
+#
+# GO
+export GOPATH=$HOME/.local/go
 
 # Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/{,s}bin(N)
+  $GOPATH/bin(N)
   $HOME/.local/{,s}bin(N)
   /usr/local/{,s}bin(N)
   /var/lib/flatpak/exports/share(N)
@@ -66,8 +74,7 @@ fi
 
 # Cargo
 if [[ -x $HOME/.cargo/bin/cargo ]]; then
-  source "$HOME/.cargo/env"
-fi
+  fi
 
 #
 # Less
@@ -85,3 +92,9 @@ fi
 if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+
+# Created by `pipx` on 2024-05-29 19:35:53
+export PATH="$PATH:/Users/brennanh/.local/bin"
+
+# Created by `userpath` on 2024-11-08 23:32:16
+export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
