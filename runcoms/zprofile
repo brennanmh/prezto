@@ -60,8 +60,11 @@ path=(
   $GOPATH/bin(N)
   $HOME/.local/{,s}bin(N)
   /usr/local/{,s}bin(N)
+  /usr/local/go/bin(N)
+  /opt/nvim/bin(N)
   /var/lib/flatpak/exports/share(N)
   $HOME/.local/share/flatpak/exports/share(N)
+  $HOME/.cargo/{,s}bin(N)
   $path
 )
 
@@ -71,10 +74,6 @@ if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
 elif [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-
-# Cargo
-if [[ -x $HOME/.cargo/bin/cargo ]]; then
-  fi
 
 #
 # Less
@@ -92,9 +91,3 @@ fi
 if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
-
-# Created by `pipx` on 2024-05-29 19:35:53
-export PATH="$PATH:/Users/brennanh/.local/bin"
-
-# Created by `userpath` on 2024-11-08 23:32:16
-export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"

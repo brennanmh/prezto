@@ -24,7 +24,7 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # aliases
-alias ls='exa --icons'
+alias ls='lsd'
 alias sr='sudo'
 alias vim='nvim'
 alias vi='nvim'
@@ -34,17 +34,10 @@ alias h='fc -l 1'
 # pyenv
 eval "$(pyenv init -)"
 
+# nvm and node.js
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Created by `pipx` on 2024-05-29 19:35:53
-export PATH="$PATH:/Users/brennanh/.local/bin"
-
 # Github Copilot
 eval "$(gh copilot alias -- zsh)"
-
-#
-
-# Created by `userpath` on 2024-11-08 23:32:16
-export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
