@@ -98,3 +98,7 @@ export PATH="$PATH:/Users/brennanh/.local/bin"
 
 # Created by `userpath` on 2024-11-08 23:32:16
 export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
+
+# Apache Airflow
+export AIRFLOW_HOME=~/Dev/TE/repos/airflow
+
