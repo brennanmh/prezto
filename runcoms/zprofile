@@ -5,6 +5,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+#echo "In .zprofile"
+
 #
 # Browser
 #
@@ -47,6 +49,7 @@ cdpath=(
   $cdpath
   $HOME
   $HOME/Dev
+  $HOME/Dev/Workspaces/
   $HOME/Dev/TE
   $HOME/Dev/TE/repos
 )
@@ -71,8 +74,10 @@ path=(
 # homebrew
 if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+#  echo "setup brew at /home/linuxbrew/.linuxbrew"
 elif [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
+#  echo "setup brew at /opt/homebrew"
 fi
 
 #
@@ -91,13 +96,3 @@ fi
 if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
-
-# Created by `pipx` on 2024-05-29 19:35:53
-export PATH="$PATH:/Users/brennanh/.local/bin"
-
-# Created by `userpath` on 2024-11-08 23:32:16
-export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
-
-# Apache Airflow
-export AIRFLOW_HOME=~/Dev/TE/repos/airflow
-

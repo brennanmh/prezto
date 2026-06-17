@@ -19,6 +19,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+source "${ZDOTDIR:-$HOME}/.zprofile"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -32,22 +33,25 @@ alias history='fc -l 1'
 alias h='fc -l 1'
 
 # pyenv
-eval "$(pyenv init -)"
+#eval "$(pyenv init -)"
 
 # nvm and node.js
-export NVM_DIR="$HOME/.nvm"
+[[ -d ~/.nvm ]] && export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Github Copilot
-eval "$(gh copilot alias -- zsh)"
+#eval "$(gh copilot alias -- zsh)"
 
 # kubectl completion
-source <(kubectl completion zsh)  # set up autocomplete in zsh into the current shell
-echo '[[ $commands[kubectl] ]] && source <(kubectl completion zsh)' >> ~/.zshrc # add autocomplete permanently to your zsh shell
+#source <(kubectl completion zsh)  # set up autocomplete in zsh into the current shell
+#echo '[[ $commands[kubectl] ]] && source <(kubectl completion zsh)' >> ~/.zshrc # add autocomplete permanently to your zsh shell
 
 
 # Created by `userpath` on 2024-11-08 23:32:16
-export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
+#export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
 
-[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+#[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# opencode
+export PATH=/home/brennan/.opencode/bin:$PATH
