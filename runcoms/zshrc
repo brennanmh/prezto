@@ -31,6 +31,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias history='fc -l 1'
 alias h='fc -l 1'
+alias python='python3'
 
 # pyenv
 #eval "$(pyenv init -)"
@@ -40,18 +41,12 @@ alias h='fc -l 1'
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Github Copilot
-#eval "$(gh copilot alias -- zsh)"
-
 # kubectl completion
-#source <(kubectl completion zsh)  # set up autocomplete in zsh into the current shell
-#echo '[[ $commands[kubectl] ]] && source <(kubectl completion zsh)' >> ~/.zshrc # add autocomplete permanently to your zsh shell
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 
 # Created by `userpath` on 2024-11-08 23:32:16
-#export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
-
-#[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+export PATH="$PATH:/Users/brennanh/Library/Application Support/hatch/pythons/3.13/python/bin"
 
 # opencode
 export PATH=/home/brennan/.opencode/bin:$PATH

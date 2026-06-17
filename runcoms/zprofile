@@ -49,9 +49,7 @@ cdpath=(
   $cdpath
   $HOME
   $HOME/Dev
-  $HOME/Dev/Workspaces/
-  $HOME/Dev/TE
-  $HOME/Dev/TE/repos
+  $HOME/Dev/Workspaces
 )
 #
 # GO
